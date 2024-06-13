@@ -1,7 +1,7 @@
 <template>
     <div class="flex p-4 flex-col">
-        <small>Text</small>
-        <input v-model="title" class="p-4" :placeholder="'Enter Text'" />
+        <small class="text-xs text-gray-600">Text</small>
+        <input v-model="title" class="p-4 mt-2" :placeholder="'Enter Text'" />
     </div>
 </template>
 

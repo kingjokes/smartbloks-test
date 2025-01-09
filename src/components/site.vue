@@ -7,7 +7,6 @@
 <script lang="ts" setup>
 import { useEditorStore } from "../store/editor";
 import { storeToRefs } from "pinia";
-import { watch, ref,  } from "vue";
 
 const editorStore = useEditorStore();
 

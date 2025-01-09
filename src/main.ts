@@ -1,14 +1,21 @@
-import { createApp } from 'vue'
-import { createPinia } from 'pinia'
-import App from './App.vue'
-import { router } from './routes'
+import { createApp } from "vue";
+import { createPinia } from "pinia";
+import App from "./App.vue";
+import { router } from "./routes";
+import { PiniaSharedState } from "pinia-shared-state";
+import "./style.css";
 
-import './style.css'
+const app = createApp(App);
 
-const app = createApp(App)
+const pinia = createPinia();
 
-const pinia = createPinia()
-
-app.use(router)
-app.use(pinia)
-app.mount('#app')
+pinia.use(
+  PiniaSharedState({
+    enable: true,
+    initialize: false,
+    type: "localstorage",
+  })
+);
+app.use(router);
+app.use(pinia);
+app.mount("#app");
